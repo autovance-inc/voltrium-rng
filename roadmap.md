@@ -1,5 +1,5 @@
 - [x] Replace the shared logo with the newly supplied image and update the favicon.
 - [x] Integrate the supplied banner on the home page without cropping its artwork.
 - [x] Verify the images render and the pages remain usable.
-- [ ] Make logo and banner URLs independent of the website host.
+- [x] Make logo and banner URLs independent of the website host.
 - [ ] Verify anonymous cross-host image loading and favicon availability.
