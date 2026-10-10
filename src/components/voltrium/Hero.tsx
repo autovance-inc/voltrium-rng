@@ -1,6 +1,6 @@
 import { mailto } from "./config";
 import { Reveal } from "./Reveal";
-import banner from "@/assets/voltrium-banner.png.asset.json";
+import banner from "@/assets/voltrium-portable-banner.webp";
 
 function CorridorGraphic() {
   return (
@@ -97,7 +97,7 @@ export function Hero() {
   return (
     <section id="top" className="relative overflow-hidden border-b border-border pt-16 md:pt-20">
       <img
-        src={banner.url}
+        src={banner}
         alt="Voltrium — Powering the electric road. Illustrated electric coaches, charging hubs and connected energy infrastructure."
         width={1920}
         height={640}

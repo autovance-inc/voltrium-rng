@@ -9,4 +9,4 @@
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
 
-- Shared brand imagery uses Lovable Assets pointers in the Logo and Hero components so uploaded media stays off the source tree and appears consistently across pages.
+- Brand imagery uses bundled local image imports and the favicon lives in public/ so external hosts serve all visible images without Lovable-specific asset endpoints; preserve CDN pointers as source archives.
