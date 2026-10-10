@@ -8,7 +8,11 @@ const fleetOptions = ["Not yet operating", "1–10 vehicles", "11–50 vehicles"
 const field =
   "w-full min-w-0 border border-border bg-background/60 px-4 py-3 text-base text-foreground placeholder:text-muted-foreground/60 outline-none transition-colors focus:border-primary";
 
-export function InquiryForm() {
+export function InquiryForm({
+  prefill,
+}: {
+  prefill?: { organization: string; project_needs: string } | undefined;
+}) {
   const submit = useServerFn(submitInquiry);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [status, setStatus] = useState<"idle" | "sending" | "done" | "error">("idle");
