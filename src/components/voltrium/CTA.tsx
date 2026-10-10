@@ -1,8 +1,12 @@
+import { useState } from "react";
+
 import { CONTACT_EMAIL, CONTACT_PHONE, CONTACT_PHONE_HREF, mailto } from "./config";
 import { InquiryForm } from "./InquiryForm";
+import { PartnerAdvisor } from "./PartnerAdvisor";
 import { Reveal } from "./Reveal";
 
 export function CTA({ headingLevel = "h2" }: { headingLevel?: "h1" | "h2" }) {
+  const [draft, setDraft] = useState<{ organization: string; project_needs: string; n: number } | null>(null);
   return (
     <section id="contact" className="relative overflow-hidden border-b border-border">
       <div className="grid-lines-fine pointer-events-none absolute inset-0 opacity-70" />
@@ -45,8 +49,16 @@ export function CTA({ headingLevel = "h2" }: { headingLevel?: "h1" | "h2" }) {
             </div>
           </Reveal>
         </div>
-        <Reveal delay={160} className="min-w-0">
-          <InquiryForm />
+        <Reveal delay={160} className="min-w-0 space-y-8">
+          <PartnerAdvisor
+            onUseDraft={(d) => {
+              setDraft({ ...d, n: (draft?.n ?? 0) + 1 });
+              requestAnimationFrame(() =>
+                document.getElementById("inquiry-form")?.scrollIntoView({ behavior: "smooth", block: "start" }),
+              );
+            }}
+          />
+          <InquiryForm key={draft?.n ?? 0} prefill={draft ?? undefined} />
         </Reveal>
       </div>
     </section>
