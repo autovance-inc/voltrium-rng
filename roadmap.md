@@ -1,3 +1,3 @@
 - [x] Replace the shared logo with the newly supplied image and update the favicon.
 - [x] Integrate the supplied banner on the home page without cropping its artwork.
-- [ ] Verify the images render and the pages remain usable.
+- [x] Verify the images render and the pages remain usable.
