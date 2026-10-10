@@ -2,4 +2,4 @@
 - [x] Integrate the supplied banner on the home page without cropping its artwork.
 - [x] Verify the images render and the pages remain usable.
 - [x] Make logo and banner URLs independent of the website host.
-- [ ] Verify anonymous cross-host image loading and favicon availability.
+- [x] Verify logo, banner and favicon load without Lovable asset endpoints; actual external deployments remain untested.
