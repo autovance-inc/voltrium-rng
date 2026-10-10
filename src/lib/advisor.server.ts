@@ -23,7 +23,7 @@ Partnership tracks to choose ONE from: Fleet operator charging partnership; OEM 
 Rules: never invent numbers, prices, station counts, dates, funding, existing partnerships or claims that anything is operational. Do not promise outcomes. Keep summary to 2-3 sentences, 2-4 reasons, 2-3 next steps. The draft_inquiry is written by the partner in first person, 90-160 words, professional, using only details the user supplied. If information is missing, keep it general rather than making it up.`;
 
 export async function recommend(input: { organization: string; goals: string }): Promise<Recommendation> {
-  const apiKey = process.env.LOVABLE_API_KEY;
+  const apiKey = process.env["LOVABLE_API_KEY"];
   if (!apiKey) throw new Error("AI is not configured.");
   const provider = createOpenAI({
     baseURL: GATEWAY,

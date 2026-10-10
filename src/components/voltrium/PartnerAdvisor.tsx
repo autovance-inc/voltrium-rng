@@ -22,7 +22,7 @@ export function PartnerAdvisor({
   async function go(e: React.FormEvent) {
     e.preventDefault();
     const parsed = advisorSchema.safeParse({ organization: org, goals });
-    if (!parsed.success) return setErr(parsed.error.issues[0].message);
+    if (!parsed.success) return setErr(parsed.error.issues[0]?.message ?? "Please check your details");
     setErr(null);
     setLoading(true);
     try {

@@ -11,7 +11,7 @@ const field =
 export function InquiryForm({
   prefill,
 }: {
-  prefill?: { organization: string; project_needs: string };
+  prefill?: { organization: string; project_needs: string } | undefined;
 }) {
   const submit = useServerFn(submitInquiry);
   const [errors, setErrors] = useState<Record<string, string>>({});
