@@ -10,3 +10,4 @@
 <!-- LOVABLE:END -->
 
 - Brand imagery uses bundled local image imports and the favicon lives in public/ so external hosts serve all visible images without Lovable-specific asset endpoints; preserve CDN pointers as source archives.
+- AI partnership advisor: prompts and model calls live in src/lib/advisor.server.ts, exposed only via the advisor.functions.ts server function, so the AI key and prompt rules (no invented numbers or operational claims) stay server-side.
