@@ -56,12 +56,12 @@ export function InquiryForm({
     errors[n] ? <p className="mt-2 text-sm text-destructive">{errors[n]}</p> : null;
 
   return (
-    <form onSubmit={onSubmit} noValidate className="grid gap-5 border border-border bg-surface/40 p-5 sm:grid-cols-2 sm:p-8 md:p-10">
+    <form id="inquiry-form" onSubmit={onSubmit} noValidate className="grid gap-5 border border-border bg-surface/40 p-5 sm:grid-cols-2 sm:p-8 md:p-10">
       <p className="label-tech-primary sm:col-span-2">Partnership inquiry</p>
       <input type="text" name="website" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden="true" />
       <label className="sm:col-span-2">
         <span className="label-tech">Organization *</span>
-        <input name="organization" maxLength={150} className={`${field} mt-2`} placeholder="Company or institution" />
+        <input name="organization" defaultValue={prefill?.organization} maxLength={150} className={`${field} mt-2`} placeholder="Company or institution" />
         <Err n="organization" />
       </label>
       <label>
@@ -92,6 +92,7 @@ export function InquiryForm({
         <span className="label-tech">Project needs *</span>
         <textarea
           name="project_needs"
+          defaultValue={prefill?.project_needs}
           rows={5}
           maxLength={2000}
           className={`${field} mt-2 resize-y`}
