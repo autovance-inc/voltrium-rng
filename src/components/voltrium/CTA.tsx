@@ -52,7 +52,7 @@ export function CTA({ headingLevel = "h2" }: { headingLevel?: "h1" | "h2" }) {
         <Reveal delay={160} className="min-w-0 space-y-8">
           <PartnerAdvisor
             onUseDraft={(d) => {
-              console.log("draft", JSON.stringify(d).slice(0,60)); setDraft({ ...d, n: (draft?.n ?? 0) + 1 });
+              setDraft({ ...d, n: (draft?.n ?? 0) + 1 });
               requestAnimationFrame(() =>
                 document.getElementById("inquiry-form")?.scrollIntoView({ behavior: "smooth", block: "start" }),
               );
