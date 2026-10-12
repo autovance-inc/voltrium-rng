@@ -8,6 +8,13 @@
       "when": 1791536727605,
       "tag": "0000_migration",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1791822283456,
+      "tag": "0001_partner_portal",
+      "breakpoints": true
     }
   ]
 }
