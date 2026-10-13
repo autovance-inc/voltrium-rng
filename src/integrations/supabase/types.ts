@@ -124,6 +124,27 @@ export type Database = {
         }
         Returns: boolean
       }
+      my_inquiries: {
+        Args: never
+        Returns: {
+          created_at: string
+          fleet_size: string
+          id: string
+          organization: string
+          project_needs: string
+          status: string
+          updated_at: string
+        }[]
+      }
+      my_inquiry_replies: {
+        Args: never
+        Returns: {
+          body: string
+          created_at: string
+          id: string
+          inquiry_id: string
+        }[]
+      }
     }
     Enums: {
       app_role: "admin"
