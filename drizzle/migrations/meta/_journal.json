@@ -15,6 +15,13 @@
       "when": 1791822283456,
       "tag": "0001_partner_portal",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1791884030776,
+      "tag": "0002_partner_dashboard",
+      "breakpoints": true
     }
   ]
 }
