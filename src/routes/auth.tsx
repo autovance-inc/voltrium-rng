@@ -32,7 +32,7 @@ function AuthPage() {
 
   useEffect(() => {
     supabase.auth.getUser().then(({ data }) => {
-      if (data.user) navigate({ to: "/portal", replace: true });
+      if (data.user) navigate({ to: "/dashboard", replace: true });
     });
   }, [navigate]);
 
@@ -44,7 +44,7 @@ function AuthPage() {
       const { error } = await supabase.auth.signInWithPassword({ email, password });
       setBusy(false);
       if (error) return setMsg(error.message);
-      navigate({ to: "/portal", replace: true });
+      navigate({ to: "/dashboard", replace: true });
     } else {
       const { error } = await supabase.auth.signUp({
         email,
@@ -61,7 +61,7 @@ function AuthPage() {
       <form onSubmit={submit} className="w-full max-w-sm space-y-5 border border-border bg-surface/40 p-8">
         <a href="/" aria-label="Voltrium home"><Logo /></a>
         <div>
-          <p className="label-tech-primary">Partner portal</p>
+          <p className="label-tech-primary">Partner sign in</p>
           <h1 className="display-md mt-2">{mode === "in" ? "Sign in" : "Create account"}</h1>
         </div>
         <input className={field} type="email" required placeholder="Email" autoComplete="email" value={email} onChange={(e) => setEmail(e.target.value)} />

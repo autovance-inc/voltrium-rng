@@ -106,7 +106,8 @@ function Portal() {
       ) : !admin.data?.ok ? (
         <div className="mx-auto max-w-lg p-10">
           <h1 className="display-md">No access</h1>
-          <p className="mt-4 text-muted-foreground">This account isn't allowed to view the partner portal.</p>
+          <p className="mt-4 text-muted-foreground">This account isn't allowed to view the admin portal.</p>
+          <a href="/dashboard" className="label-tech-primary mt-6 inline-block">Go to my inquiries →</a>
         </div>
       ) : (
         <main className="mx-auto grid max-w-[1400px] gap-6 px-5 py-8 md:px-10 lg:grid-cols-[minmax(0,420px)_1fr]">
