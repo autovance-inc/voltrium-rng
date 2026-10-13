@@ -11,4 +11,4 @@
 
 - Brand imagery uses bundled local image imports and the favicon lives in public/ so external hosts serve all visible images without Lovable-specific asset endpoints; preserve CDN pointers as source archives.
 - AI partnership advisor: prompts and model calls live in src/lib/advisor.server.ts, exposed only via the advisor.functions.ts server function, so the AI key and prompt rules (no invented numbers or operational claims) stay server-side.
-- Partner portal lives under the _authenticated layout and reads/writes via the browser client; access is enforced by has_role('admin') RLS, with the owner email auto-granted admin on confirmed signup by a trigger.
+- Partner portal lives under the _authenticated layout and reads/writes via the browser client; access is enforced by has_role('admin') RLS, with the owner email auto-granted admin on confirmed signup by a trigger. Partners read their own inquiries and replies only through security-definer RPCs matched to their confirmed email, so internal notes, assignee and follow-up dates never reach them.
